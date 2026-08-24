@@ -35,10 +35,6 @@ body {
   overflow-x: hidden;
 }
 
-body.menu-open {
-  overflow: hidden;
-}
-
 img {
   display: block;
   max-width: 100%;
@@ -1042,17 +1038,29 @@ body:not([data-page="home"]) .site-header {
 
   .site-nav {
     position: fixed;
-    inset: 0;
+    top: calc(4.9rem + env(safe-area-inset-top));
+    right: var(--pad);
+    left: var(--pad);
     display: grid;
-    align-content: center;
+    align-content: start;
     justify-items: start;
-    gap: 1.1rem;
-    padding: 6rem var(--pad);
-    background: var(--ink);
+    gap: 0.65rem;
+    max-height: min(72svh, 34rem);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    padding: 1.1rem;
+    background: rgba(17, 17, 15, 0.96);
+    border: 1px solid var(--line-light);
     color: var(--white);
-    transform: translateX(100%);
-    transition: transform 0.35s ease;
-    font-size: clamp(1.6rem, 8vw, 4rem);
+    box-shadow: 0 22px 70px rgba(17, 17, 15, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.7rem);
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    font-size: clamp(1.65rem, 8vw, 3.2rem);
     font-family: var(--serif);
     font-weight: 600;
     letter-spacing: 0;
@@ -1060,7 +1068,17 @@ body:not([data-page="home"]) .site-header {
   }
 
   body.menu-open .site-nav {
-    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  body.menu-open .site-header {
+    background: transparent;
+    border-color: transparent;
+    color: var(--white);
+    backdrop-filter: none;
   }
 
   .nav-cta {

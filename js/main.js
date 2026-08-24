@@ -36,6 +36,12 @@ updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
 
 if (menuToggle && menu) {
+  const closeMenu = () => {
+    document.body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+  };
+
   menuToggle.addEventListener("click", () => {
     const isOpen = document.body.classList.toggle("menu-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
@@ -43,11 +49,15 @@ if (menuToggle && menu) {
   });
 
   menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      document.body.classList.remove("menu-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open menu");
-    });
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) closeMenu();
   });
 }
 
