@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery | Jessi G Style</title>
+    <meta name="description" content="A visual portfolio structure for Jessi G Style haircut, fade, beard, lineup, and styling work.">
+    <meta property="og:title" content="Gallery | Jessi G Style">
+    <meta property="og:description" content="Explore the Jessi G Style portfolio and replace placeholders with Jessica's real haircut photography.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/hero-cut.png">
+    <link rel="canonical" href="https://www.example.com/gallery.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body data-page="gallery">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page-transition" aria-hidden="true"></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="index.html" aria-label="Jessi G Style home"><span>Jessi G</span><span>Style</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
+      <nav class="site-nav" id="site-menu" data-menu>
+        <a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="nav-cta" href="booking.html">Book Appointment</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="page-hero gallery-hero">
+        <div class="page-hero-copy reveal">
+          <p class="eyebrow">Gallery / Work</p>
+          <h1>The visual archive starts here.</h1>
+          <p>This page is structured for Jessica's real haircut photography, with mixed image sizes and lightweight expansion.</p>
+        </div>
+      </section>
+      <section class="gallery-grid section-pad" aria-label="Jessi G Style work gallery">
+        <button class="gallery-item tall reveal" type="button" data-lightbox="assets/images/gallery-01.jpg" data-title="Fades">
+          <span class="image-slot" data-placeholder="gallery-01.jpg"><img src="assets/images/gallery-01.jpg" alt="Gallery placeholder for fade work" loading="lazy"><span>gallery-01.jpg</span></span>
+          <strong>Fades</strong>
+        </button>
+        <button class="gallery-item reveal" type="button" data-lightbox="assets/images/gallery-02.jpg" data-title="Textured Cuts">
+          <span class="image-slot" data-placeholder="gallery-02.jpg"><img src="assets/images/gallery-02.jpg" alt="Gallery placeholder for textured cuts" loading="lazy"><span>gallery-02.jpg</span></span>
+          <strong>Texture</strong>
+        </button>
+        <button class="gallery-item wide reveal" type="button" data-lightbox="assets/images/gallery-03.jpg" data-title="Scissor Work">
+          <span class="image-slot" data-placeholder="gallery-03.jpg"><img src="assets/images/gallery-03.jpg" alt="Gallery placeholder for scissor work" loading="lazy"><span>gallery-03.jpg</span></span>
+          <strong>Scissor Work</strong>
+        </button>
+        <button class="gallery-item reveal" type="button" data-lightbox="assets/images/gallery-04.jpg" data-title="Beard Detailing">
+          <span class="image-slot" data-placeholder="gallery-04.jpg"><img src="assets/images/gallery-04.jpg" alt="Gallery placeholder for beard detailing" loading="lazy"><span>gallery-04.jpg</span></span>
+          <strong>Beard Detail</strong>
+        </button>
+        <button class="gallery-item tall reveal" type="button" data-lightbox="assets/images/gallery-05.jpg" data-title="Lineups">
+          <span class="image-slot" data-placeholder="gallery-05.jpg"><img src="assets/images/gallery-05.jpg" alt="Gallery placeholder for lineup work" loading="lazy"><span>gallery-05.jpg</span></span>
+          <strong>Lineups</strong>
+        </button>
+        <button class="gallery-item reveal" type="button" data-lightbox="assets/images/gallery-06.jpg" data-title="Styling">
+          <span class="image-slot" data-placeholder="gallery-06.jpg"><img src="assets/images/gallery-06.jpg" alt="Gallery placeholder for styling work" loading="lazy"><span>gallery-06.jpg</span></span>
+          <strong>Styling</strong>
+        </button>
+      </section>
+      <section class="instagram-band">
+        <p class="eyebrow">Instagram Portfolio</p>
+        <h2>Follow the work as it evolves.</h2>
+        <a class="button button-dark" href="https://www.instagram.com/jessi_g_style" target="_blank" rel="noopener">Open Instagram</a>
+      </section>
+    </main>
+    <div class="lightbox" data-lightbox-modal hidden>
+      <button type="button" aria-label="Close gallery preview" data-lightbox-close>&times;</button>
+      <div class="lightbox-frame">
+        <img alt="" data-lightbox-img>
+        <div class="lightbox-placeholder" data-lightbox-placeholder></div>
+      </div>
+      <p data-lightbox-title></p>
+    </div>
+    <footer class="site-footer">
+      <div><a class="footer-brand" href="index.html">Jessi G Style</a><p>Professional barbering and grooming services by Jessica Galarza.</p></div>
+      <nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="booking.html">Book</a><a href="contact.html">Contact</a></nav>
+      <a href="https://www.instagram.com/jessi_g_style" target="_blank" rel="noopener">@jessi_g_style</a>
+      <p class="copyright">&copy; <span data-year></span> Jessi G Style. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
