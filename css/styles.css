@@ -1000,8 +1000,8 @@ body:not([data-page="home"]) .site-header {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
+  opacity: 1;
+  transform: none;
 }
 
 @media (max-width: 980px) {

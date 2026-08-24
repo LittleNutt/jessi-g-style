@@ -150,11 +150,7 @@ if (!prefersReducedMotion && window.Lenis) {
 }
 
 if (!prefersReducedMotion && window.gsap) {
-  gsap.fromTo(
-    ".page-transition",
-    { yPercent: 0, opacity: 1 },
-    { yPercent: -100, opacity: 1, duration: 0.65, ease: "power3.out" }
-  );
+  gsap.set(".page-transition", { yPercent: 100, opacity: 0 });
 
   gsap.to(".hero-media img", {
     scale: 1,
@@ -166,16 +162,20 @@ if (!prefersReducedMotion && window.gsap) {
     gsap.registerPlugin(window.ScrollTrigger);
 
     gsap.utils.toArray(".reveal").forEach((element) => {
-      gsap.to(element, {
-        opacity: 1,
-        y: 0,
-        duration: 0.9,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "top 86%",
-        },
-      });
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 86%",
+          },
+        }
+      );
     });
 
     gsap.utils.toArray("[data-parallax]").forEach((element) => {
