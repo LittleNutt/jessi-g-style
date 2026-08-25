@@ -1,5 +1,3 @@
-const BOOKING_URL_PLACEHOLDER = "#booking-link-placeholder";
-
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
@@ -81,15 +79,6 @@ document.querySelectorAll(".image-slot").forEach((slot) => {
     img.hidden = true;
     slot.classList.add("is-missing");
     slot.classList.remove("is-loaded");
-  });
-});
-
-document.querySelectorAll("[data-booking-link]").forEach((link) => {
-  if (link.getAttribute("href") !== BOOKING_URL_PLACEHOLDER) return;
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    link.textContent = "Booking URL needed";
-    link.setAttribute("aria-label", "Booking URL still needs to be added");
   });
 });
 

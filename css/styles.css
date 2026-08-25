@@ -80,7 +80,7 @@ textarea {
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 2rem;
-  padding: 1rem var(--pad);
+  padding: 1rem max(var(--pad), 2rem);
   color: var(--white);
   transition: background 0.35s ease, color 0.35s ease, padding 0.35s ease, border-color 0.35s ease;
 }
@@ -167,27 +167,30 @@ body:not([data-page="home"]) .site-header {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  gap: 0.65rem;
-  background: rgba(255, 253, 248, 0.94);
-  border-color: rgba(255, 253, 248, 0.94);
-  color: var(--ink);
-  box-shadow: 0 12px 36px rgba(17, 17, 15, 0.24);
+  gap: 0.85rem;
+  min-width: 178px;
+  min-height: 50px;
+  padding: 0.95rem 1.35rem 0.95rem 1.55rem;
+  background: linear-gradient(135deg, #11110f 0%, #25231f 100%);
+  border-color: rgba(168, 176, 142, 0.62);
+  color: var(--white);
+  box-shadow: 0 16px 34px rgba(17, 17, 15, 0.28);
 }
 
 .nav-cta::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 0 auto 0 0;
   z-index: -1;
-  background: linear-gradient(110deg, transparent 0%, rgba(168, 176, 142, 0.45) 42%, transparent 72%);
-  transform: translateX(-110%);
-  transition: transform 0.55s ease;
+  width: 5px;
+  background: linear-gradient(180deg, var(--sage), rgba(255, 253, 248, 0.82), var(--clay));
+  transition: width 0.28s ease;
 }
 
 .nav-cta::after {
   content: "";
-  width: 0.42rem;
-  height: 0.42rem;
+  width: 0.48rem;
+  height: 0.48rem;
   border-top: 1px solid currentColor;
   border-right: 1px solid currentColor;
   transform: rotate(45deg);
@@ -195,19 +198,19 @@ body:not([data-page="home"]) .site-header {
 }
 
 .nav-cta:hover::before {
-  transform: translateX(110%);
+  width: 10px;
 }
 
 .nav-cta:hover::after {
-  transform: translateX(3px) rotate(45deg);
+  transform: translateX(4px) rotate(45deg);
 }
 
 .site-header.is-scrolled .nav-cta,
 body:not([data-page="home"]) .site-header .nav-cta {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: linear-gradient(135deg, #11110f 0%, #2a2823 100%);
+  border-color: rgba(143, 129, 114, 0.5);
   color: var(--white);
-  box-shadow: none;
+  box-shadow: 0 10px 24px rgba(17, 17, 15, 0.16);
 }
 
 .nav-cta:hover,
@@ -294,6 +297,7 @@ body:not([data-page="home"]) .site-header .nav-cta {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 46% 42%;
   transform: scale(1.06);
 }
 
@@ -610,7 +614,7 @@ body:not([data-page="home"]) .site-header .nav-cta {
   padding-bottom: clamp(5rem, 10vw, 9rem);
   background:
     linear-gradient(rgba(248, 244, 236, 0.82), rgba(248, 244, 236, 0.82)),
-    url("../assets/images/hero-cut.png") center/cover fixed;
+    url("../assets/images/hero-cut.jpg") center/cover fixed;
 }
 
 .booking-inner {
@@ -631,7 +635,7 @@ body:not([data-page="home"]) .site-header .nav-cta {
   padding: 10rem var(--pad) 5rem;
   background:
     linear-gradient(110deg, rgba(17, 17, 15, 0.9), rgba(17, 17, 15, 0.5)),
-    url("../assets/images/hero-cut.png") center/cover;
+    url("../assets/images/hero-cut.jpg") center/cover;
   color: var(--white);
 }
 
@@ -937,7 +941,7 @@ body:not([data-page="home"]) .site-header .nav-cta {
   margin: 2rem 0 0;
 }
 
-.contact-list div {
+.contact-list > div {
   display: grid;
   grid-template-columns: 8rem 1fr;
   gap: 1rem;
@@ -956,6 +960,63 @@ body:not([data-page="home"]) .site-header .nav-cta {
 .contact-list dd {
   margin: 0;
   color: var(--ash);
+}
+
+.contact-list dd strong {
+  color: var(--ink);
+}
+
+.contact-list dd a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.contact-hours {
+  margin-top: 1.35rem;
+  padding: 1.2rem 1.35rem;
+  background: rgba(255, 253, 248, 0.76);
+  border: 1px solid var(--line);
+}
+
+.contact-hours h2 {
+  margin: 0 0 0.8rem;
+  color: var(--clay);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hours-grid {
+  display: grid;
+  width: 100%;
+}
+
+.hours-grid > div {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 0.72rem 0;
+  border-top: 1px solid rgba(17, 17, 15, 0.1);
+}
+
+.hours-grid > div:first-child {
+  border-top: 0;
+}
+
+.hours-grid span:first-child {
+  color: var(--clay);
+  font-weight: 800;
+}
+
+.hours-grid span:last-child {
+  color: var(--ash);
+  justify-self: end;
+  text-align: right;
 }
 
 .contact-form {
@@ -1205,7 +1266,7 @@ body:not([data-page="home"]) .site-header .nav-cta {
   }
 
   .hero-actions,
-  .contact-list div,
+  .contact-list > div,
   .service-row {
     display: grid;
     grid-template-columns: 1fr;
