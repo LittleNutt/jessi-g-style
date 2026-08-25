@@ -82,15 +82,6 @@ document.querySelectorAll(".image-slot").forEach((slot) => {
   });
 });
 
-const contactForm = document.querySelector("[data-contact-form]");
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const note = contactForm.querySelector("[data-form-note]");
-    if (note) note.textContent = "This form needs a connected form service before messages can be sent.";
-  });
-}
-
 function initLightbox() {
   const modal = document.querySelector("[data-lightbox-modal]");
   if (!modal) return;
