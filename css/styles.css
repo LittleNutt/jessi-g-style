@@ -876,7 +876,7 @@ body:not([data-page="home"]) .site-header .nav-cta {
 
 .booking-page {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.58fr);
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.62fr);
   gap: clamp(2rem, 7vw, 7rem);
   align-items: center;
   background: var(--ink);
@@ -893,37 +893,79 @@ body:not([data-page="home"]) .site-header .nav-cta {
 }
 
 .booking-steps {
-  padding: clamp(1.2rem, 3vw, 2rem);
+  padding: clamp(1.5rem, 3.4vw, 2.6rem);
   border: 1px solid var(--line-light);
+  background: rgba(255, 253, 248, 0.035);
 }
 
 .booking-steps h2 {
   font-size: clamp(2rem, 4vw, 4rem);
 }
 
-.booking-steps ol {
-  margin: 2rem 0 0;
-  padding: 0;
-  list-style: none;
+.booking-detail-list {
+  display: grid;
+  margin-top: clamp(1.6rem, 4vw, 2.45rem);
 }
 
-.booking-steps li {
+.booking-detail {
   display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 1rem;
-  padding: 1.2rem 0;
+  gap: 0.55rem;
+  padding: 1.25rem 0;
   border-top: 1px solid var(--line-light);
 }
 
-.booking-steps span {
+.booking-detail:last-child {
+  border-bottom: 1px solid var(--line-light);
+}
+
+.booking-detail-label {
+  margin: 0;
   color: var(--sage);
   font-size: 0.76rem;
   font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.booking-detail-copy,
+.booking-detail-times {
+  color: rgba(248, 244, 236, 0.76);
+  font-size: clamp(0.98rem, 1.45vw, 1.08rem);
+  line-height: 1.55;
+}
+
+.booking-detail-copy {
+  margin: 0;
+}
+
+.booking-detail-copy strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.booking-detail-times {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.booking-detail-times div {
+  display: grid;
+  grid-template-columns: 4.8rem minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.booking-detail-times span:first-child {
+  color: rgba(248, 244, 236, 0.58);
+  font-weight: 700;
+}
+
+.booking-detail-times span:last-child {
+  color: rgba(248, 244, 236, 0.82);
 }
 
 .booking-steps p {
   margin: 0;
-  color: rgba(248, 244, 236, 0.72);
 }
 
 .contact-page {

@@ -36,11 +36,24 @@
         </div>
         <aside class="booking-steps reveal" aria-label="Booking process">
           <h2>Appointment Details</h2>
-          <ol>
-            <li><span>01</span><p>Fernandez NYC Barbershop, 43-15 Greenpoint Ave, Sunnyside, NY 11104.</p></li>
-            <li><span>02</span><p>Jessica's listed hours: Tue-Sat 10:10 AM-7:30 PM, Sun 10:00 AM-3:00 PM, Mon off.</p></li>
-            <li><span>03</span><p>Choose the service and confirm your appointment through SQUIRE.</p></li>
-          </ol>
+          <div class="booking-detail-list" role="list">
+            <section class="booking-detail" role="listitem">
+              <p class="booking-detail-label">Location</p>
+              <p class="booking-detail-copy"><strong>Fernandez NYC Barbershop</strong><br>43-15 Greenpoint Ave, Sunnyside, NY 11104</p>
+            </section>
+            <section class="booking-detail" role="listitem">
+              <p class="booking-detail-label">Jessica's Hours</p>
+              <div class="booking-detail-times" aria-label="Jessica's listed hours">
+                <div><span>Mon</span><span>Off</span></div>
+                <div><span>Tue-Sat</span><span>10:10 AM - 7:30 PM</span></div>
+                <div><span>Sun</span><span>10:00 AM - 3:00 PM</span></div>
+              </div>
+            </section>
+            <section class="booking-detail" role="listitem">
+              <p class="booking-detail-label">Booking</p>
+              <p class="booking-detail-copy">Choose your service and confirm the appointment through SQUIRE.</p>
+            </section>
+          </div>
         </aside>
       </section>
     </main>
