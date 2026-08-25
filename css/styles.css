@@ -163,6 +163,53 @@ body:not([data-page="home"]) .site-header {
   transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
+.nav-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  gap: 0.65rem;
+  background: rgba(255, 253, 248, 0.94);
+  border-color: rgba(255, 253, 248, 0.94);
+  color: var(--ink);
+  box-shadow: 0 12px 36px rgba(17, 17, 15, 0.24);
+}
+
+.nav-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 0%, rgba(168, 176, 142, 0.45) 42%, transparent 72%);
+  transform: translateX(-110%);
+  transition: transform 0.55s ease;
+}
+
+.nav-cta::after {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+}
+
+.nav-cta:hover::before {
+  transform: translateX(110%);
+}
+
+.nav-cta:hover::after {
+  transform: translateX(3px) rotate(45deg);
+}
+
+.site-header.is-scrolled .nav-cta,
+body:not([data-page="home"]) .site-header .nav-cta {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+  box-shadow: none;
+}
+
 .nav-cta:hover,
 .button:hover {
   transform: translateY(-2px);
