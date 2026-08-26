@@ -559,12 +559,6 @@ body:not([data-page="home"]) .site-header .nav-cta {
   border-bottom: 1px solid var(--line-light);
 }
 
-.service-row::after {
-  content: "+";
-  color: var(--sage);
-  font-size: 1.3rem;
-}
-
 .services-preview .button {
   margin-top: 2.5rem;
 }
@@ -614,6 +608,10 @@ body:not([data-page="home"]) .site-header .nav-cta {
   margin: 1.3rem auto 2rem;
 }
 
+.booking-inner h2 + .button {
+  margin-top: clamp(1.6rem, 3vw, 2.4rem);
+}
+
 .page-hero {
   min-height: 72svh;
   display: grid;
@@ -641,7 +639,7 @@ body:not([data-page="home"]) .site-header .nav-cta {
 
 .service-detail {
   display: grid;
-  grid-template-columns: 4rem minmax(0, 1fr) minmax(12rem, auto) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, auto);
   gap: clamp(1rem, 3vw, 3rem);
   align-items: start;
   padding: 2rem 0;
@@ -1221,12 +1219,11 @@ body:not([data-page="home"]) .site-header .nav-cta {
   }
 
   .service-detail {
-    grid-template-columns: 3rem 1fr;
+    grid-template-columns: 1fr;
   }
 
-  .service-detail .service-meta,
-  .service-detail .text-link {
-    grid-column: 2;
+  .service-detail .service-meta {
+    grid-column: auto;
   }
 
   .site-footer {
