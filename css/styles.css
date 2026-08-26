@@ -662,6 +662,43 @@ body:not([data-page="home"]) .site-header .nav-cta {
   text-transform: uppercase;
 }
 
+.video-showcase {
+  max-width: calc(var(--max) + var(--pad) * 2);
+  margin: 0 auto;
+  padding-top: clamp(3rem, 7vw, 6rem);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.video-card {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.video-card video {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  background: var(--charcoal);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+
+.video-card h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 600;
+  line-height: 0.95;
+}
+
 .gallery-grid {
   max-width: var(--max);
   margin: 0 auto;
@@ -856,6 +893,57 @@ body:not([data-page="home"]) .site-header .nav-cta {
   font-family: var(--serif);
   font-size: clamp(1.7rem, 4vw, 3.5rem);
   line-height: 1;
+}
+
+.review-list {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.review-card {
+  margin: 0;
+  min-height: 100%;
+  display: grid;
+  align-content: space-between;
+  gap: 1.4rem;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border: 1px solid var(--line-light);
+  background: rgba(255, 253, 248, 0.045);
+}
+
+.review-card blockquote,
+.review-highlight {
+  margin: 0;
+  color: var(--white);
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 3vw, 2.45rem);
+  font-weight: 600;
+  line-height: 1.04;
+}
+
+.review-stars {
+  color: #d8bd73;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+
+.review-card figcaption {
+  margin: 0;
+  color: var(--sage);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.review-card figcaption a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 
 .booking-page {
@@ -1214,11 +1302,16 @@ body:not([data-page="home"]) .site-header .nav-cta {
   }
 
   .gallery-grid,
+  .video-grid,
   .work-editorial {
     grid-template-columns: 1fr;
   }
 
   .service-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .review-list {
     grid-template-columns: 1fr;
   }
 
