@@ -681,7 +681,7 @@ body:not([data-page="home"]) .site-header .nav-cta {
 
 .video-showcase .section-heading h2 {
   max-width: none;
-  font-size: clamp(2.7rem, 5.2vw, 5.6rem);
+  font-size: clamp(2.35rem, 4.2vw, 4.8rem);
   white-space: nowrap;
 }
 
@@ -737,6 +737,15 @@ body:not([data-page="home"]) .site-header .nav-cta {
   text-align: left;
 }
 
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(17, 17, 15, 0.68) 0%, rgba(17, 17, 15, 0.38) 32%, transparent 64%);
+}
+
 .gallery-item.tall {
   grid-row: span 2;
   min-height: 560px;
@@ -772,7 +781,8 @@ body:not([data-page="home"]) .site-header .nav-cta {
   font-size: clamp(1.8rem, 3vw, 3.2rem);
   font-weight: 600;
   line-height: 0.9;
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  color: var(--white);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
 }
 
 .instagram-band {
@@ -1387,6 +1397,10 @@ body:not([data-page="home"]) .site-header .nav-cta {
 
   .image-slot.portrait {
     min-height: 430px;
+  }
+
+  .gallery-item::before {
+    background: linear-gradient(180deg, rgba(17, 17, 15, 0.78) 0%, rgba(17, 17, 15, 0.48) 38%, transparent 72%);
   }
 
   .booking-panel {
