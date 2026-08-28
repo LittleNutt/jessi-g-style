@@ -4,7 +4,7 @@ Current Jessica Galarza work photos are saved into the site under these filename
 
 - `hero-cut.jpg`
 - `hero-jessica.jpg`
-- `url-preview-jessica-card-20260828.jpg`
+- `url-preview-jessica-20260828.jpg`
 - `featured-fade.jpg`
 - `featured-texture.jpg`
 - `featured-youth-cut.jpg`
